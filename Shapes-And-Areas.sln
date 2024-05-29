@@ -3,7 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34902.65
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes-And-Areas", "Shapes-And-Areas\Shapes-And-Areas.csproj", "{1F03EF61-21D6-45EA-8B5A-D5EECA9FDBD8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shapes-And-Areas", "Shapes-And-Areas\Shapes-And-Areas.csproj", "{1F03EF61-21D6-45EA-8B5A-D5EECA9FDBD8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shapes-And-Formulas", "Shapes-And-Formulas\Shapes-And-Formulas.csproj", "{0F88D7B0-EFC1-42F8-B4CA-4B1D20B9ACA6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{AF4041F3-C8A3-429B-A643-C02A5696B8EE}"
+	ProjectSection(SolutionItems) = preProject
+		README.txt = README.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +22,10 @@ Global
 		{1F03EF61-21D6-45EA-8B5A-D5EECA9FDBD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F03EF61-21D6-45EA-8B5A-D5EECA9FDBD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F03EF61-21D6-45EA-8B5A-D5EECA9FDBD8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F88D7B0-EFC1-42F8-B4CA-4B1D20B9ACA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F88D7B0-EFC1-42F8-B4CA-4B1D20B9ACA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F88D7B0-EFC1-42F8-B4CA-4B1D20B9ACA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F88D7B0-EFC1-42F8-B4CA-4B1D20B9ACA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
