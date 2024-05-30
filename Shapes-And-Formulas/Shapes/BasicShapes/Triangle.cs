@@ -2,6 +2,9 @@
 
 namespace Shapes_And_Formulas.Shapes.BasicShapes
 {
+    /// <summary>
+    /// Треугольник (треугольный)
+    /// </summary>
     public class Triangle : BasicShape
     {
 
@@ -16,6 +19,9 @@ namespace Shapes_And_Formulas.Shapes.BasicShapes
             protected set => throw new NotSupportedException(TRY_TO_SET_NAME_ERROR);
         }
 
+        /// <summary>
+        /// Является ли треугольник прямоугольным
+        /// </summary>
         public bool IsRightTriangle => 
             double.Equals(Math.Pow(_hypotenuse, 2) , (Math.Pow(_firstCatet, 2) + Math.Pow(_secondCatet, 2)));
 
@@ -43,16 +49,27 @@ namespace Shapes_And_Formulas.Shapes.BasicShapes
 
         private readonly List<double> _sides = [0, 0 ,0];
 
+        /// <summary>
+        /// Первая сторона треугольника
+        /// </summary>
         public double A
         {
             get => _sides[0];
             set => _sides[0] = value;
         }
+
+        /// <summary>
+        /// Вторая сторона треугольника
+        /// </summary>
         public double B
         {
             get => _sides[1];
             set => _sides[1] = value;
         }
+
+        /// <summary>
+        /// Третья сторона треугольника
+        /// </summary>
         public double C
         {
             get => _sides[2];

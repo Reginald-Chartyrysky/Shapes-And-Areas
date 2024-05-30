@@ -1,6 +1,9 @@
 ﻿
 namespace Shapes_And_Formulas.InterfacesAndAbstracts
 {
+    /// <summary>
+    /// Класс с полезной информацией для фигур, которые нельзя изменять
+    /// </summary>
     public abstract class BasicShape: Shape
     {
         #region Constants

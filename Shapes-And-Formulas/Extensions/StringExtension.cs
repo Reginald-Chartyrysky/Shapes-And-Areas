@@ -3,6 +3,12 @@ namespace Shapes_And_Formulas.Extensions
 {
     public static class StringExtension
     {
+        /// <summary>
+        /// Метод, вычисляющий результат математической операции, которая представлена через <see cref="string"/>
+        /// </summary>
+        /// <param name="str"></param>
+        /// <returns>Результат операции <see cref="double"/></returns>
+        /// <exception cref="Exception"></exception>
         public static double ComputeExpression(this string str)
         {
             double result = 0;

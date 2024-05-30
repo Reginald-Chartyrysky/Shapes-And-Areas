@@ -2,6 +2,9 @@
 
 namespace Shapes_And_Formulas.Shapes.BasicShapes
 {
+    /// <summary>
+    /// Круг (круглый)
+    /// </summary>
     public class Circle : BasicShape
     {
         #region Constants

@@ -3,21 +3,27 @@ using System.Text.RegularExpressions;
 
 namespace Shapes_And_Formulas.Shapes.CustomShape
 {
+    /// <summary>
+    /// Класс для форматирования параметризированного <see cref="string"/>
+    /// </summary>
     static class StringExtensionForCustomShape
     {
-        private static readonly Regex ParametersRegex = new(@"{(\d*)}", RegexOptions.Compiled);
-        
         /// <summary>
-        /// Replaces all the items in the template string with format "{variable}" using the value from the data
+        /// Регекс для параметров типа "{n}", где n — число
         /// </summary>
-        /// <param name="templateString">string template</param>
-        /// <param name="model">The data to fill into the template</param>
+        private static readonly Regex _parametersRegex = new(@"{(\d*)}", RegexOptions.Compiled);
+
+        /// <summary>
+        /// Заменяет все параметры типа "{n}" из шаблона <see cref="string"/>, используя значение из предоставленного списка параметров
+        /// </summary>
+        /// <param name="templateString">Шаблон</param>
+        /// <param name="parameters">Список используемых параметров</param>
         /// <returns></returns>
         public static string FormatTemplate(this string templateString, List<ShapeParameter> parameters)
         {
             if (parameters is null) return templateString;
             
-            return ParametersRegex.Replace(
+            return _parametersRegex.Replace(
                 templateString,
                 match =>
                 {

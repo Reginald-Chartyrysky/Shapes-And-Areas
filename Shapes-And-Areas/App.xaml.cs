@@ -125,56 +125,7 @@ namespace Shapes_And_Areas
 
                 if (value == _figures.Count + 1)
                 {
-                    CustomShape newCustom = new();
-
-                    Console.WriteLine("Введите название новой фигуры");
-                    newCustom.SetName(Console.ReadLine() ?? "Нет названия");
-                    bool isDone;
-                    do
-                    {
-                        Console.WriteLine("Введите название параметра фигуры");
-                        string paramName = Console.ReadLine() ?? "Нет названия";
-
-                        newCustom.Parameters.Add(new ShapeParameter(paramName, 0));
-
-                        Console.WriteLine("Наберите \"done\", чтобы закончить добавлять параметры. Чтобы продолжить введите что-либо другое");
-
-                        isDone = Console.ReadLine() == "done";
-
-                    } while (isDone is false);
-
-
-                    bool isFormulaSet;
-                    do
-                    {
-                        Console.WriteLine("Введите формулу площади фигуры\n");
-
-                        Console.WriteLine("Формула имеет следующий формат.");
-
-                        Console.WriteLine("Доступные символы:\n");
-                        Console.WriteLine("{n}, где n — индекс введенных параметров (начиная с 0)");
-
-                        Console.WriteLine("+");
-                        Console.WriteLine("-");
-                        Console.WriteLine("*");
-                        Console.WriteLine("/");
-
-                        Console.WriteLine("Pow(n,q), где n — число, q — степень");
-
-                        Console.WriteLine("Sqrt(n), где n — число\n");
-
-
-                        Console.WriteLine("Пример площади квадрата, где первый (и единственный) параметр – его сторона:");
-
-                        Console.WriteLine("Pow({0},2)");
-
-                        string paramFormula = Console.ReadLine() ?? string.Empty;
-
-                        isFormulaSet = newCustom.SetAreaFormula(paramFormula);
-
-                    } while (!isFormulaSet);
-
-                    _figures.Add(newCustom);
+                    _figures.Add(CreateCustomShape());
                 }
 
                 Console.WriteLine("\n\n"); ;
@@ -183,7 +134,60 @@ namespace Shapes_And_Areas
 
         }
 
-        
+        private CustomShape CreateCustomShape()
+        {
+            CustomShape newCustom = new();
+
+            Console.WriteLine("Введите название новой фигуры");
+            newCustom.SetName(Console.ReadLine() ?? "Нет названия");
+
+            bool isDoneWithParams;
+            do
+            {
+                Console.WriteLine("Введите название параметра фигуры");
+                string paramName = Console.ReadLine() ?? "Нет названия";
+
+                newCustom.Parameters.Add(new ShapeParameter(paramName, 0));
+
+                Console.WriteLine("Наберите \"done\", чтобы закончить добавлять параметры. Чтобы продолжить их добавлять, введите что-либо другое.");
+
+                isDoneWithParams = Console.ReadLine() == "done";
+
+            } while (isDoneWithParams is false);
+
+
+            bool isFormulaSet;
+            do
+            {
+                Console.WriteLine("Введите формулу площади фигуры\n");
+
+                Console.WriteLine("Формула имеет следующий формат.");
+
+                Console.WriteLine("Доступные символы:\n");
+                Console.WriteLine("{n}, где n — индекс введенных параметров (начиная с 0)");
+
+                Console.WriteLine("+");
+                Console.WriteLine("-");
+                Console.WriteLine("*");
+                Console.WriteLine("/");
+
+                Console.WriteLine("Pow(n,q), где n — число, q — степень");
+
+                Console.WriteLine("Sqrt(n), где n — число\n");
+
+
+                Console.WriteLine("Пример площади квадрата, где первый (и единственный) параметр – его сторона:");
+
+                Console.WriteLine("Pow({0},2)");
+
+                string paramFormula = Console.ReadLine() ?? string.Empty;
+
+                isFormulaSet = newCustom.SetAreaFormula(paramFormula);
+
+            } while (!isFormulaSet);
+
+            return newCustom;
+        }
     }
 
 }
