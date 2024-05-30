@@ -8,7 +8,6 @@ namespace Shapes_And_Formulas.Extensions
             double result = 0;
             try
             {
-                str = str.Replace(',', '.');
                 Expression expr = new(str);
                 result = Convert.ToDouble(expr.Evaluate());
             }
@@ -18,5 +17,8 @@ namespace Shapes_And_Formulas.Extensions
             }
             return result;
         }
+
     }
+
+    
 }

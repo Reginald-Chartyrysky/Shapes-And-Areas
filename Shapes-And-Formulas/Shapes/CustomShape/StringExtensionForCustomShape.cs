@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Globalization;
+using System.Text.RegularExpressions;
 
 namespace Shapes_And_Formulas.Shapes.CustomShape
 {
@@ -23,7 +24,7 @@ namespace Shapes_And_Formulas.Shapes.CustomShape
                     int number = Convert.ToInt32( match.Value.Remove(0, 1).Remove(match.Value.Length - 2, 1) );
                     try
                     {
-                        return parameters[number].Value.ToString();
+                        return parameters[number].Value.ToString(CultureInfo.InvariantCulture);
                     }
                     catch(Exception ex)
                     {
