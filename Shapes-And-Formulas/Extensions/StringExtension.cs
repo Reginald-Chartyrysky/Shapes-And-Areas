@@ -14,6 +14,7 @@ namespace Shapes_And_Formulas.Extensions
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                throw new Exception("Ошибка при форматировании");
             }
             return result;
         }

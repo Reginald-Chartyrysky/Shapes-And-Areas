@@ -29,7 +29,7 @@ namespace Shapes_And_Formulas.Shapes.CustomShape
                     catch(Exception ex)
                     {
                         Console.WriteLine(ex.ToString());
-                        return "0";
+                        throw new Exception("Ошибка при форматировании");
                     }
                 });
 

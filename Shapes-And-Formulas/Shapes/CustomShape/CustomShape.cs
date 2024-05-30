@@ -33,9 +33,21 @@ namespace Shapes_And_Formulas.Shapes.CustomShape
 
         public override double Area => AreaFormula.FormatTemplate(Parameters).ComputeExpression();
         public override double Perimeter => PerimeterFormula.FormatTemplate(Parameters).ComputeExpression();
-        public void SetAreaFormula(string formula)
+        public bool SetAreaFormula(string formula)
         {
-            AreaFormula = formula;
+            string areaFormula = formula;
+            try
+            {
+                areaFormula.FormatTemplate(Parameters).ComputeExpression();
+                AreaFormula = formula;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+
         }
         public void SetPerimeterFormula(string formula)
         {
