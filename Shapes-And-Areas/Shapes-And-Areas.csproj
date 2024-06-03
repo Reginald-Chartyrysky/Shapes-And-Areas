@@ -12,5 +12,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Shapes-And-Formulas\Shapes-And-Formulas.csproj" />
   </ItemGroup>
-
+	<Target Name="OchenVazhno" BeforeTargets="Build">
+		<Message Importance="high" Text="Собираем собируху" />
+	</Target>
 </Project>
