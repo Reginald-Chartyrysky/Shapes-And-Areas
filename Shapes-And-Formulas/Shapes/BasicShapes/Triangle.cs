@@ -13,29 +13,17 @@ namespace Shapes_And_Formulas.Shapes.BasicShapes
         private const string TRIANGLE_NAME = "Треугольник";
 
         #endregion
-        public override string Name
-        {
-            get => TRIANGLE_NAME;
-            protected set => throw new NotSupportedException(TRY_TO_SET_NAME_ERROR);
-        }
+        public override string Name => TRIANGLE_NAME;
 
-        /// <summary>
-        /// Является ли треугольник прямоугольным
-        /// </summary>
-        public bool IsRightTriangle => 
-            double.Equals(Math.Pow(_hypotenuse, 2) , (Math.Pow(_firstCatet, 2) + Math.Pow(_secondCatet, 2)));
+		/// <summary>
+		/// Является ли треугольник прямоугольным
+		/// </summary>
+		public bool IsRightTriangle =>
+			Equals(Math.Pow(_hypotenuse, 2), (Math.Pow(_firstCatet, 2) + Math.Pow(_secondCatet, 2)));
 
         #region Formulas
-        public override string AreaFormula
-        {
-            get => $"Sqrt({_halfPerimeter} * ({_halfPerimeter} - {A}) * ({_halfPerimeter} - {B}) * ({_halfPerimeter} - {C}))";
-            protected set => throw new NotSupportedException(TRY_TO_SET_AREA_FORMULA_ERROR);
-        }
-        public override string PerimeterFormula 
-        {
-            get => $"{A} + {B} + {C}";
-            protected set => throw new NotSupportedException(TRY_TO_SET_PERIMETER_FORMULA_ERROR); 
-        }
+        public override double Area  => Math.Sqrt(_halfPerimeter * (_halfPerimeter - A) * (_halfPerimeter - B) * (_halfPerimeter - C));
+        public override double Perimeter => A + B + C;
         #endregion
 
         #region Parameters
@@ -43,9 +31,9 @@ namespace Shapes_And_Formulas.Shapes.BasicShapes
 
         private double _hypotenuse => _sides.Max();
 
-        private double _firstCatet => _sides.FirstOrDefault(x => x != _hypotenuse);
+        private double _firstCatet => _sides.First(x => x != _hypotenuse);
 
-        private double _secondCatet => _sides.LastOrDefault(x => x != _hypotenuse);
+        private double _secondCatet => _sides.Last(x => x != _hypotenuse);
 
         private readonly List<double> _sides = [0, 0 ,0];
 

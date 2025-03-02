@@ -18,14 +18,14 @@ namespace Tests_For_Shapes_And_Formulas
         {
             // Arrange
             double radius = 10;
-            Circle circle = new() 
+			double actualArea = double.Pi * radius * radius;
+			Circle circle = new() 
             { Radius = radius };
 
             // Act
             double circleArea = circle.Area;
 
             // Assert
-            double actualArea = double.Pi * radius * radius;
             Assert.AreEqual(actualArea, circleArea, 0.001, "Повреждена формула площади круга");
         }
 
@@ -37,7 +37,10 @@ namespace Tests_For_Shapes_And_Formulas
             double b = 6;
             double c = 10;
 
-            Triangle triangle = new()
+			double halfPerimeter = (a + b + c) / 2;
+			double actualArea = Math.Sqrt(halfPerimeter * (halfPerimeter - a) * (halfPerimeter - b) * (halfPerimeter - c));
+
+			Triangle triangle = new()
             { 
                 A = a,
                 B = b,
@@ -48,8 +51,6 @@ namespace Tests_For_Shapes_And_Formulas
             double triangleArea = triangle.Area;
 
             // Assert
-            double halfPerimeter = (a + b + c) / 2;
-            double actualArea = Math.Sqrt(halfPerimeter*(halfPerimeter-a)*(halfPerimeter-b)*(halfPerimeter-c));
 
             Assert.AreEqual(actualArea, triangleArea, 0.001, "Повреждена формула площади треугольника");
         }

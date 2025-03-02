@@ -14,19 +14,15 @@ namespace Shapes_And_Formulas.Shapes.CustomShape
         /// </summary>
         public List<ShapeParameter> Parameters { get; protected set; } = new();
 
-        public override string Name
-        {
-            get => _name;
-            protected set => _name = value;
-        }
+        public override string Name => _name;
 
-        public override string AreaFormula
+        public string AreaFormula
         {
             get => _areaFormula;
             protected set => _areaFormula = value;
         }
 
-        public override string PerimeterFormula
+        public string PerimeterFormula
         {
             get => _perimeterFormula;
             protected set => _perimeterFormula = value;
@@ -43,7 +39,7 @@ namespace Shapes_And_Formulas.Shapes.CustomShape
         /// <param name="name">Название</param>
         public void SetName(string name)
         {
-            Name = name;
+            _name = name;
         }
 
         /// <summary>
@@ -99,12 +95,5 @@ namespace Shapes_And_Formulas.Shapes.CustomShape
         private string _perimeterFormula = string.Empty;
 
         #endregion
-
-
-
-
-
-
-
     }
 }
