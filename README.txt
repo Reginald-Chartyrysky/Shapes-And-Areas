@@ -1,1 +1,1 @@
-Library for geometry operations shapes.
+Library for geometry shapes.
